@@ -1,5 +1,5 @@
 {% set name = "atdict" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 33b3fbd653f2e683ff5c6e5bc74d2ba4831abc69ac6a8b2e530806eaf9f52288
+  sha256: 52fa9afbd80cd66baf20b8a8f22995ca7579f1255cbc22a66a38c2aa91fbb39c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Attribute-access ordered dictionary'
+  summary: Attribute-access ordered dictionary
   description: |
     atdict is an attribute-access ordered dictionary. You can use a
     key name as an attribute to access the value of the dictionary for
